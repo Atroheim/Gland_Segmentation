@@ -1,0 +1,16 @@
+data:
+  img_dir: /root/autodl-tmp/Glas/Image
+  lbl_dir: /root/autodl-tmp/Glas/Label
+  img_size: 1024
+  batch_size: 2
+  num_workers: 4
+  n_samples: null
+
+model:
+  type: medsam
+  checkpoint: weights/medsam_vit_b.pth
+
+train:
+  epochs: 20
+  lr: 0.0001
+  save_dir: results/medsam

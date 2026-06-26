@@ -1,0 +1,17 @@
+data:
+  img_dir: /root/autodl-tmp/Glas/Image
+  lbl_dir: /root/autodl-tmp/Glas/Label
+  img_size: 1024
+  batch_size: 2
+  num_workers: 4
+  n_samples: null
+
+model:
+  type: sam
+  checkpoint: weights/sam_vit_h_4b8939.pth
+  model_type: vit_h
+
+train:
+  epochs: 20
+  lr: 0.0001
+  save_dir: results/sam
