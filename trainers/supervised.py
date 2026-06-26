@@ -5,7 +5,7 @@ from utils.metrics import dice_score, iou_score
 
 
 class SupervisedTrainer:
-    def __init__(self, model, optimizer, device: str, model_name: str):
+    def __init__(self, model, optimizer, device, model_name: str):
         self.model = model
         self.optimizer = optimizer
         self.device = device

@@ -4,7 +4,6 @@ import os
 import yaml
 import torch
 from torch.utils.data import DataLoader
-from tqdm import tqdm
 
 from data.dataset import GlaSDataset, UnlabeledGlaSDataset
 from models.unet import UNet
@@ -114,14 +113,14 @@ def train_fixmatch(cfg, device):
     unlabeled_loader = DataLoader(unlabeled_ds, batch_size=cfg['data']['unlabeled_batch_size'],
                                    shuffle=True, num_workers=cfg['data']['num_workers'],
                                    pin_memory=True, drop_last=True)
-    val_loader = DataLoader(val_ds, batch_size=4, shuffle=False)
+    val_loader = DataLoader(val_ds, batch_size=4, shuffle=False, num_workers=cfg['data']['num_workers'])
 
     model = UNet(
         in_channels=cfg['model']['in_channels'],
         out_channels=cfg['model']['out_channels'],
         features=cfg['model']['features'],
     ).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=cfg['train']['lr'])
+    optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=cfg['train']['lr'])
     trainer = FixMatchTrainer(
         model, optimizer, device,
         threshold=cfg['train']['threshold'],
