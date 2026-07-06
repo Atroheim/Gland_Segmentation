@@ -1,0 +1,4 @@
+Model: unet  Split: testB  (n=20)
+Dice: 0.8957 +/- 0.0884
+IoU:  0.8214 +/- 0.1355
+Time: 13.27 +/- 0.40 ms/img

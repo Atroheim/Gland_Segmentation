@@ -1,0 +1,4 @@
+Model: medsam  Split: testA  (n=60)
+Dice: 0.9146 +/- 0.0837
+IoU:  0.8522 +/- 0.1269
+Time: 86.03 +/- 1.40 ms/img

@@ -88,10 +88,17 @@ def evaluate_split(model, split: str, cfg: dict, device, vis_dir: str = None, n_
                 _save_vis(imgs[0], masks[0], preds[0], os.path.join(vis_dir, f'{split}_{i}.png'))
                 saved += 1
 
+    ddof = 1 if len(dice_vals) > 1 else 0
     return {
         'dice': float(np.mean(dice_vals)),
         'iou':  float(np.mean(iou_vals)),
         'time_ms': float(np.mean(time_vals)),
+        'dice_std': float(np.std(dice_vals, ddof=ddof)),
+        'iou_std':  float(np.std(iou_vals, ddof=ddof)),
+        'time_std': float(np.std(time_vals, ddof=ddof)),
+        'dice_list': dice_vals,
+        'iou_list':  iou_vals,
+        'time_list': time_vals,
     }
 
 
@@ -111,6 +118,28 @@ def _save_vis(img, mask, pred, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     plt.savefig(path, dpi=100, bbox_inches='tight')
     plt.close()
+
+
+def _write_per_image(save_dir, split, m):
+    import csv
+    os.makedirs(save_dir, exist_ok=True)
+    with open(os.path.join(save_dir, f'metrics_{split}.csv'), 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['index', 'dice', 'iou', 'time_ms'])
+        for i, (d, j, t) in enumerate(zip(m['dice_list'], m['iou_list'], m['time_list'])):
+            w.writerow([i, f'{d:.4f}', f'{j:.4f}', f'{t:.2f}'])
+
+
+def _write_summary(save_dir, name, split, m):
+    os.makedirs(save_dir, exist_ok=True)
+    text = (
+        f"Model: {name}  Split: {split}  (n={len(m['dice_list'])})\n"
+        f"Dice: {m['dice']:.4f} +/- {m['dice_std']:.4f}\n"
+        f"IoU:  {m['iou']:.4f} +/- {m['iou_std']:.4f}\n"
+        f"Time: {m['time_ms']:.2f} +/- {m['time_std']:.2f} ms/img\n"
+    )
+    with open(os.path.join(save_dir, f'summary_{split}.txt'), 'w') as f:
+        f.write(text)
 
 
 def main():
@@ -140,6 +169,7 @@ def main():
             cfg = yaml.safe_load(f)
 
         model = load_model(cfg, ckpt, device)
+        save_dir = os.path.dirname(ckpt)
 
         row = f"{name:<12}"
         split_results = {}
@@ -147,6 +177,8 @@ def main():
             vis_dir = f'results/vis/{name}' if args.vis else None
             m = evaluate_split(model, split, cfg, device, vis_dir=vis_dir)
             split_results[split] = m
+            _write_per_image(save_dir, split, m)
+            _write_summary(save_dir, name, split, m)
             row += f"  {m['dice']:.4f}  {m['iou']:.4f}  {m['time_ms']:6.1f}"
         print(row)
         all_results[name] = split_results
@@ -155,17 +187,36 @@ def main():
     import csv
     with open('results/eval_results.csv', 'w', newline='') as f:
         writer = csv.writer(f)
-        cols = ['model'] + [f'{s}_{k}' for s in args.splits for k in ('dice', 'iou', 'time_ms')]
+        cols = ['model'] + [f'{s}_{k}' for s in args.splits
+                            for k in ('dice', 'dice_std', 'iou', 'iou_std', 'time_ms', 'time_std')]
         writer.writerow(cols)
         for name, sres in all_results.items():
             row = [name]
             for s in args.splits:
                 if s in sres:
-                    row += [f"{sres[s]['dice']:.4f}", f"{sres[s]['iou']:.4f}", f"{sres[s]['time_ms']:.2f}"]
+                    r = sres[s]
+                    row += [f"{r['dice']:.4f}", f"{r['dice_std']:.4f}",
+                            f"{r['iou']:.4f}", f"{r['iou_std']:.4f}",
+                            f"{r['time_ms']:.2f}", f"{r['time_std']:.2f}"]
                 else:
-                    row += ['', '', '']
+                    row += ['', '', '', '', '', '']
             writer.writerow(row)
-    print("\nResults saved to results/eval_results.csv")
+
+    with open('results/comparison_table.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['model', 'split', 'dice', 'iou', 'time_ms'])
+        for name, sres in all_results.items():
+            for s in args.splits:
+                if s in sres:
+                    r = sres[s]
+                    writer.writerow([
+                        name, s,
+                        f"{r['dice']:.4f} +/- {r['dice_std']:.4f}",
+                        f"{r['iou']:.4f} +/- {r['iou_std']:.4f}",
+                        f"{r['time_ms']:.2f}",
+                    ])
+    print("\nResults saved to results/eval_results.csv and results/comparison_table.csv")
+    print("Per-image metrics: results/<model>/metrics_<split>.csv")
 
     if args.vis:
         print("Visualizations saved to results/vis/")

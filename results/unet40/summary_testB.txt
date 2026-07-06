@@ -1,0 +1,4 @@
+Model: unet40  Split: testB  (n=20)
+Dice: 0.8823 +/- 0.0837
+IoU:  0.7986 +/- 0.1295
+Time: 13.32 +/- 0.38 ms/img

@@ -1,0 +1,4 @@
+Model: sam  Split: testB  (n=20)
+Dice: 0.9139 +/- 0.0689
+IoU:  0.8482 +/- 0.1115
+Time: 320.01 +/- 3.10 ms/img

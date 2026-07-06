@@ -1,0 +1,4 @@
+Model: unetpp  Split: testA  (n=60)
+Dice: 0.9152 +/- 0.0628
+IoU:  0.8493 +/- 0.0987
+Time: 38.23 +/- 1.85 ms/img

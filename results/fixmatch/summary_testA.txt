@@ -1,0 +1,4 @@
+Model: fixmatch  Split: testA  (n=60)
+Dice: 0.8690 +/- 0.1098
+IoU:  0.7829 +/- 0.1529
+Time: 13.29 +/- 0.34 ms/img
