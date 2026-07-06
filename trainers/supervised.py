@@ -19,7 +19,7 @@ class SupervisedTrainer:
         for imgs, masks in loader:
             imgs, masks = imgs.to(self.device), masks.to(self.device)
             self.optimizer.zero_grad()
-            preds = self.model(imgs, gt_mask=masks) if self._is_sam else self.model(imgs)
+            preds = self.model(imgs)
             loss = self.criterion(preds, masks)
             loss.backward()
             self.optimizer.step()

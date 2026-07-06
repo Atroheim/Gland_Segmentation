@@ -1,0 +1,37 @@
+Training medsam on cuda
+Epoch   1/100 | loss=0.5685 dice=0.6558 iou=0.5012 time=166.0ms
+Epoch   5/100 | loss=0.4272 dice=0.6778 iou=0.5224 time=270.0ms
+Epoch  10/100 | loss=0.3784 dice=0.7094 iou=0.5608 time=223.4ms
+Epoch  15/100 | loss=0.3479 dice=0.7508 iou=0.6122 time=266.5ms
+Epoch  20/100 | loss=0.3292 dice=0.7633 iou=0.6283 time=265.2ms
+Epoch  25/100 | loss=0.2991 dice=0.7573 iou=0.6198 time=265.1ms
+Epoch  30/100 | loss=0.2893 dice=0.7541 iou=0.6170 time=267.3ms
+Epoch  35/100 | loss=0.2776 dice=0.7713 iou=0.6393 time=265.8ms
+Epoch  40/100 | loss=0.2697 dice=0.7723 iou=0.6402 time=267.8ms
+Epoch  45/100 | loss=0.2565 dice=0.7673 iou=0.6331 time=186.8ms
+Epoch  50/100 | loss=0.2522 dice=0.7625 iou=0.6282 time=170.7ms
+Epoch  55/100 | loss=0.2470 dice=0.7709 iou=0.6381 time=172.6ms
+[Tue Jun 30 21:50:36 CST 2026] === MedSAM 101→200 ===
+Training medsam on cuda
+Resumed from results/medsam/best.pth, starting at epoch 101
+Epoch 105/200 | loss=0.0599 dice=0.9116 iou=0.8471 time=89.8ms
+Epoch 110/200 | loss=0.0589 dice=0.9099 iou=0.8448 time=89.5ms
+Epoch 115/200 | loss=0.0558 dice=0.9125 iou=0.8482 time=87.2ms
+Epoch 120/200 | loss=0.0545 dice=0.9143 iou=0.8512 time=89.6ms
+Epoch 125/200 | loss=0.0529 dice=0.9146 iou=0.8522 time=90.0ms
+Epoch 130/200 | loss=0.0525 dice=0.9137 iou=0.8506 time=90.0ms
+Epoch 135/200 | loss=0.0522 dice=0.9099 iou=0.8444 time=90.5ms
+Epoch 140/200 | loss=0.0500 dice=0.9100 iou=0.8450 time=86.1ms
+Epoch 145/200 | loss=0.0496 dice=0.9099 iou=0.8447 time=90.0ms
+Epoch 150/200 | loss=0.0496 dice=0.9144 iou=0.8511 time=89.0ms
+Epoch 155/200 | loss=0.0493 dice=0.9146 iou=0.8509 time=89.6ms
+Epoch 160/200 | loss=0.0486 dice=0.9097 iou=0.8443 time=89.6ms
+Epoch 165/200 | loss=0.0484 dice=0.9139 iou=0.8507 time=89.8ms
+Epoch 170/200 | loss=0.0473 dice=0.9127 iou=0.8488 time=89.7ms
+Epoch 175/200 | loss=0.0464 dice=0.9135 iou=0.8497 time=90.7ms
+Epoch 180/200 | loss=0.0478 dice=0.9107 iou=0.8463 time=91.9ms
+Epoch 185/200 | loss=0.0465 dice=0.9124 iou=0.8483 time=89.8ms
+Epoch 190/200 | loss=0.0469 dice=0.9116 iou=0.8474 time=90.0ms
+Epoch 195/200 | loss=0.0461 dice=0.9132 iou=0.8494 time=89.1ms
+Epoch 200/200 | loss=0.0464 dice=0.9107 iou=0.8460 time=90.3ms
+Best Dice: 0.9146. Checkpoint: results/medsam/best.pth

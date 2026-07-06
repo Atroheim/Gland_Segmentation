@@ -6,10 +6,9 @@ from utils.metrics import dice_score, iou_score
 from utils.losses import BCEDiceLoss
 
 
-# ── Metrics ──────────────────────────────────────────────────────────────────
 
 def test_dice_perfect_overlap():
-    pred = torch.full((1, 1, 4, 4), 10.0)   # sigmoid → ~1
+    pred = torch.full((1, 1, 4, 4), 10.0)
     target = torch.ones(1, 1, 4, 4)
     assert abs(dice_score(pred, target) - 1.0) < 1e-3
 
@@ -34,7 +33,6 @@ def test_dice_returns_float():
     result = dice_score(pred, target)
     assert isinstance(result, float)
 
-# ── Loss ─────────────────────────────────────────────────────────────────────
 
 def test_loss_is_scalar():
     loss_fn = BCEDiceLoss()

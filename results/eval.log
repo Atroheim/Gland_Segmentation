@@ -1,0 +1,21 @@
+[Tue Jun 30 20:42:00 CST 2026] Waiting for training queue (pid 103568) to finish...
+[Tue Jun 30 22:34:30 CST 2026] Training done. Running evaluation...
+Device: cuda
+
+Model         testA Dice  testA IoU  testA ms  testB Dice  testB IoU  testB ms
+------------------------------------------------------------------------------
+unet          0.9102  0.8424    17.5  0.8957  0.8214    14.0
+unetpp        0.9152  0.8493    39.3  0.9005  0.8288    39.0
+sam           0.9248  0.8669   321.1  0.9139  0.8482   320.1
+medsam        0.9146  0.8522    85.9  0.9066  0.8364    85.9
+fixmatch      0.8579  0.7731    13.7  0.8836  0.8007    13.9
+
+Results saved to results/eval_results.csv
+Visualizations saved to results/vis/
+[Tue Jun 30 22:35:45 CST 2026] Evaluation complete. Results:
+model,testA_dice,testA_iou,testA_time_ms,testB_dice,testB_iou,testB_time_ms
+unet,0.9102,0.8424,17.47,0.8957,0.8214,13.98
+unetpp,0.9152,0.8493,39.28,0.9005,0.8288,39.01
+sam,0.9248,0.8669,321.06,0.9139,0.8482,320.08
+medsam,0.9146,0.8522,85.90,0.9066,0.8364,85.91
+fixmatch,0.8579,0.7731,13.71,0.8836,0.8007,13.86

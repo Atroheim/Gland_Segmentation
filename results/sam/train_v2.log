@@ -1,0 +1,28 @@
+Training sam on cuda
+Epoch   1/100 | loss=0.5047 dice=0.6438 iou=0.5056 time=994.0ms
+Epoch   5/100 | loss=0.3372 dice=0.7712 iou=0.6449 time=982.8ms
+Epoch  10/100 | loss=0.3124 dice=0.7785 iou=0.6543 time=997.0ms
+[Tue Jun 30 20:39:51 CST 2026] === SAM 101→200 ===
+Training sam on cuda
+Resumed from results/sam/best.pth, starting at epoch 101
+Epoch 105/200 | loss=0.0604 dice=0.9217 iou=0.8634 time=321.6ms
+Epoch 110/200 | loss=0.0553 dice=0.9226 iou=0.8648 time=321.4ms
+Epoch 115/200 | loss=0.0579 dice=0.9190 iou=0.8576 time=323.0ms
+Epoch 120/200 | loss=0.0524 dice=0.9164 iou=0.8543 time=321.3ms
+Epoch 125/200 | loss=0.0530 dice=0.9187 iou=0.8590 time=322.1ms
+Epoch 130/200 | loss=0.0495 dice=0.9248 iou=0.8669 time=321.3ms
+Epoch 135/200 | loss=0.0475 dice=0.9214 iou=0.8619 time=321.1ms
+Epoch 140/200 | loss=0.0458 dice=0.9232 iou=0.8653 time=321.3ms
+Epoch 145/200 | loss=0.0459 dice=0.9240 iou=0.8662 time=320.1ms
+Epoch 150/200 | loss=0.0447 dice=0.9218 iou=0.8630 time=320.9ms
+Epoch 155/200 | loss=0.0433 dice=0.9206 iou=0.8612 time=321.1ms
+Epoch 160/200 | loss=0.0422 dice=0.9218 iou=0.8625 time=321.3ms
+Epoch 165/200 | loss=0.0425 dice=0.9223 iou=0.8636 time=320.4ms
+Epoch 170/200 | loss=0.0414 dice=0.9230 iou=0.8649 time=321.5ms
+Epoch 175/200 | loss=0.0407 dice=0.9234 iou=0.8654 time=321.4ms
+Epoch 180/200 | loss=0.0406 dice=0.9233 iou=0.8652 time=321.4ms
+Epoch 185/200 | loss=0.0405 dice=0.9230 iou=0.8646 time=321.1ms
+Epoch 190/200 | loss=0.0403 dice=0.9230 iou=0.8646 time=321.4ms
+Epoch 195/200 | loss=0.0404 dice=0.9232 iou=0.8648 time=321.2ms
+Epoch 200/200 | loss=0.0399 dice=0.9231 iou=0.8647 time=321.2ms
+Best Dice: 0.9248. Checkpoint: results/sam/best.pth

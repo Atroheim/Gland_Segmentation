@@ -1,0 +1,74 @@
+Training unetpp on cuda
+Epoch   1/200 | loss=0.4934 dice=0.6415 iou=0.4939 time=1.0ms
+Epoch   5/200 | loss=0.3793 dice=0.7424 iou=0.6164 time=1.0ms
+Epoch  10/200 | loss=0.2839 dice=0.8103 iou=0.6963 time=1.6ms
+Epoch  15/200 | loss=0.2575 dice=0.8561 iou=0.7606 time=1.0ms
+Epoch  20/200 | loss=0.2244 dice=0.8615 iou=0.7720 time=1.0ms
+Epoch  25/200 | loss=0.2141 dice=0.8709 iou=0.7817 time=0.9ms
+Epoch  30/200 | loss=0.2090 dice=0.8435 iou=0.7465 time=1.0ms
+Epoch  35/200 | loss=0.1915 dice=0.8742 iou=0.7899 time=1.0ms
+Epoch  40/200 | loss=0.1851 dice=0.8759 iou=0.7893 time=0.9ms
+Epoch  45/200 | loss=0.1684 dice=0.8846 iou=0.8040 time=0.9ms
+Epoch  50/200 | loss=0.1628 dice=0.8204 iou=0.7276 time=1.0ms
+Epoch  55/200 | loss=0.1539 dice=0.8875 iou=0.8055 time=0.9ms
+Epoch  60/200 | loss=0.1396 dice=0.8672 iou=0.7874 time=1.1ms
+Epoch  65/200 | loss=0.1329 dice=0.8997 iou=0.8265 time=0.9ms
+Epoch  70/200 | loss=0.1552 dice=0.8685 iou=0.7825 time=0.9ms
+Epoch  75/200 | loss=0.1359 dice=0.8755 iou=0.7883 time=0.9ms
+Epoch  80/200 | loss=0.1223 dice=0.8998 iou=0.8261 time=0.9ms
+Epoch  85/200 | loss=0.1245 dice=0.8945 iou=0.8189 time=1.4ms
+Epoch  90/200 | loss=0.1213 dice=0.8963 iou=0.8207 time=1.4ms
+Epoch  95/200 | loss=0.1065 dice=0.8896 iou=0.8110 time=0.9ms
+Epoch 100/200 | loss=0.1012 dice=0.9120 iou=0.8443 time=0.9ms
+Epoch 105/200 | loss=0.0925 dice=0.9079 iou=0.8388 time=0.9ms
+Epoch 110/200 | loss=0.0964 dice=0.9028 iou=0.8306 time=1.0ms
+Epoch 115/200 | loss=0.0943 dice=0.8991 iou=0.8244 time=1.6ms
+Epoch 120/200 | loss=0.0999 dice=0.8985 iou=0.8254 time=0.9ms
+Epoch 125/200 | loss=0.0888 dice=0.8990 iou=0.8259 time=1.4ms
+Epoch 130/200 | loss=0.0797 dice=0.9144 iou=0.8481 time=1.0ms
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 210, in <module>
+    help='Epoch to start from (use with --resume)')
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 206, in main
+    parser.add_argument('--config', default=None)
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 106, in train_supervised
+    
+  File "/root/autodl-tmp/Gland_Segmentation/trainers/supervised.py", line 26, in train_epoch
+    total += loss.item()
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 94945) is killed by signal: Terminated. 
+Training unetpp on cuda
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 224, in <module>
+    main()
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 220, in main
+    train_supervised(args, cfg, device)
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 98, in train_supervised
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 1396, in __init__
+    super().__init__(optimizer, last_epoch)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 139, in __init__
+    raise KeyError(
+KeyError: "param 'initial_lr' is not specified in param_groups[0] when resuming scheduler with last_epoch >= 0.\nThis typically happens when:\n1. You're trying to resume training from a checkpoint but haven't properly loaded the optimizer state\n2. You're using last_epoch >= 0 for a fresh training run (not recommended)"
+[Tue Jun 30 20:07:57 CST 2026] Waiting for UNet (pid 95719) to finish...
+[Tue Jun 30 20:12:27 CST 2026] UNet done. Resuming UNet++ from epoch 126...
+Training unetpp on cuda
+Resumed from results/unetpp/best.pth, starting at epoch 126
+Epoch 130/200 | loss=0.1424 dice=0.8834 iou=0.8010 time=1.0ms
+Epoch 135/200 | loss=0.0971 dice=0.8956 iou=0.8223 time=1.8ms
+Epoch 140/200 | loss=0.1160 dice=0.8950 iou=0.8203 time=1.0ms
+Epoch 145/200 | loss=0.1076 dice=0.8744 iou=0.7898 time=1.0ms
+Epoch 150/200 | loss=0.0864 dice=0.8912 iou=0.8145 time=1.0ms
+Epoch 155/200 | loss=0.0862 dice=0.9015 iou=0.8283 time=1.0ms
+Epoch 160/200 | loss=0.0753 dice=0.9046 iou=0.8341 time=1.0ms
+Epoch 165/200 | loss=0.0770 dice=0.9112 iou=0.8426 time=1.0ms
+Epoch 170/200 | loss=0.0713 dice=0.9095 iou=0.8404 time=1.0ms
+Epoch 175/200 | loss=0.0693 dice=0.9089 iou=0.8397 time=1.0ms
+Epoch 180/200 | loss=0.0670 dice=0.9121 iou=0.8445 time=1.0ms
+Epoch 185/200 | loss=0.0689 dice=0.9131 iou=0.8460 time=1.0ms
+Epoch 190/200 | loss=0.0682 dice=0.9152 iou=0.8493 time=1.0ms
+Epoch 195/200 | loss=0.0635 dice=0.9144 iou=0.8476 time=1.0ms
+Epoch 200/200 | loss=0.0643 dice=0.9135 iou=0.8463 time=1.0ms
+Best Dice: 0.9152. Checkpoint: results/unetpp/best.pth
+[Tue Jun 30 20:31:17 CST 2026] UNet++ done.

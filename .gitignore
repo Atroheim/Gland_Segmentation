@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Superpowers / skill scratch
+.superpowers/
+docs/
+
+# Large model weights & checkpoints (not tracked)
+weights/
+*.pth
+
+# Regenerable training artifacts
+results/*/tb/
+results/_backup_*/
+results/tensorboard.log
+
+# One-off run scripts (hardcoded pids / scratch)
+resume_unet.sh
+resume_unetpp.sh
+run_semisup.sh
+
+# Course material with third-party links
+*.pptx
+
+# Claude Code local settings
+.claude/

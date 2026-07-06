@@ -1,0 +1,28 @@
+Training fixmatch on cuda
+Epoch   1/150 | loss=0.5532 dice=0.6415 iou=0.4939
+Epoch  10/150 | loss=0.3141 dice=0.8006 iou=0.6861
+Epoch  20/150 | loss=0.2502 dice=0.8237 iou=0.7144
+Epoch  30/150 | loss=0.4072 dice=0.7036 iou=0.5670
+Epoch  40/150 | loss=0.5119 dice=0.7835 iou=0.6679
+Epoch  50/150 | loss=0.4826 dice=0.7206 iou=0.5913
+Epoch  60/150 | loss=0.4726 dice=0.7612 iou=0.6420
+Epoch  70/150 | loss=0.4675 dice=0.5612 iou=0.4454
+Epoch  80/150 | loss=0.4527 dice=0.7218 iou=0.5968
+Epoch  90/150 | loss=0.4501 dice=0.7336 iou=0.6050
+Epoch 100/150 | loss=0.4546 dice=0.7593 iou=0.6393
+Epoch 110/150 | loss=0.4530 dice=0.7807 iou=0.6648
+Epoch 120/150 | loss=0.4406 dice=0.8281 iou=0.7200
+Epoch 130/150 | loss=0.4330 dice=0.7631 iou=0.6421
+Epoch 140/150 | loss=0.4239 dice=0.6948 iou=0.5724
+Epoch 150/150 | loss=0.4236 dice=0.7206 iou=0.6085
+Best Dice: 0.8281. Checkpoint: results/fixmatch/best.pth
+[Tue Jun 30 22:34:19 CST 2026] === FixMatch 151→200 ===
+Training fixmatch on cuda
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 237, in <module>
+    main()
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 231, in main
+    train_fixmatch(cfg, device)
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 170, in train_fixmatch
+    start_epoch = args.start_epoch
+NameError: name 'args' is not defined

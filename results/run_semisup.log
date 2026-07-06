@@ -1,0 +1,8 @@
+[Mon Jul  6 15:36:45 CST 2026] === FixMatch fresh -> 200 ===
+[Mon Jul  6 15:47:36 CST 2026] FixMatch done.
+[Mon Jul  6 15:47:36 CST 2026] === UNet40 (40-label baseline) -> 200 ===
+run_semisup.sh: line 14: results/unet40/train.log: No such file or directory
+[Mon Jul  6 15:52:43 CST 2026] === UNet40 -> 200 ===
+[Mon Jul  6 16:01:41 CST 2026] UNet40 done.
+[Mon Jul  6 16:01:41 CST 2026] === Re-eval all (with vis) ===
+[Mon Jul  6 16:03:00 CST 2026] ALL DONE.

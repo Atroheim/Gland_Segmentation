@@ -1,0 +1,23 @@
+Training fixmatch on cuda
+Epoch   1/200 | loss=0.5478 dice=0.1914 iou=0.1239
+Epoch  10/200 | loss=0.3467 dice=0.7690 iou=0.6456
+Epoch  20/200 | loss=0.2763 dice=0.8443 iou=0.7470
+Epoch  30/200 | loss=0.2425 dice=0.8576 iou=0.7640
+Epoch  40/200 | loss=0.2161 dice=0.8251 iou=0.7211
+Epoch  50/200 | loss=0.1767 dice=0.8107 iou=0.7121
+Epoch  60/200 | loss=0.1651 dice=0.8366 iou=0.7471
+Epoch  70/200 | loss=0.1564 dice=0.8586 iou=0.7715
+Epoch  80/200 | loss=0.1486 dice=0.8336 iou=0.7384
+Epoch  90/200 | loss=0.1304 dice=0.8195 iou=0.7316
+Epoch 100/200 | loss=0.1104 dice=0.8690 iou=0.7829
+Epoch 110/200 | loss=0.1197 dice=0.8362 iou=0.7462
+Epoch 120/200 | loss=0.0990 dice=0.8425 iou=0.7526
+Epoch 130/200 | loss=0.0867 dice=0.8340 iou=0.7427
+Epoch 140/200 | loss=0.0897 dice=0.8442 iou=0.7527
+Epoch 150/200 | loss=0.0796 dice=0.8615 iou=0.7757
+Epoch 160/200 | loss=0.0768 dice=0.8583 iou=0.7718
+Epoch 170/200 | loss=0.0748 dice=0.8604 iou=0.7739
+Epoch 180/200 | loss=0.0774 dice=0.8607 iou=0.7743
+Epoch 190/200 | loss=0.0751 dice=0.8594 iou=0.7718
+Epoch 200/200 | loss=0.0724 dice=0.8593 iou=0.7714
+Best Dice: 0.8690. Checkpoint: results/fixmatch/best.pth

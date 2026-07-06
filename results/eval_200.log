@@ -1,0 +1,13 @@
+Device: cuda
+
+Model         testA Dice  testA IoU  testA ms  testB Dice  testB IoU  testB ms
+------------------------------------------------------------------------------
+unet          0.9102  0.8424    19.9  0.8957  0.8214    13.2
+unet40        0.8714  0.7851    13.4  0.8823  0.7986    13.3
+unetpp        0.9152  0.8493    38.3  0.9005  0.8288    38.5
+sam           0.9248  0.8669   317.7  0.9139  0.8482   316.7
+medsam        0.9146  0.8522    85.5  0.9066  0.8364    85.7
+fixmatch      0.8690  0.7829    13.4  0.8678  0.7796    13.9
+
+Results saved to results/eval_results.csv
+Visualizations saved to results/vis/

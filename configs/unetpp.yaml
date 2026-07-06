@@ -2,13 +2,12 @@ data:
   img_dir: /root/autodl-tmp/Glas/Image
   lbl_dir: /root/autodl-tmp/Glas/Label
   img_size: 512
-  n_labeled: 40
-  labeled_batch_size: 4
-  unlabeled_batch_size: 4
+  batch_size: 4
   num_workers: 4
+  n_samples: null
 
 model:
-  type: unet
+  type: unetpp
   in_channels: 3
   out_channels: 1
   features: [64, 128, 256, 512]
@@ -16,9 +15,4 @@ model:
 train:
   epochs: 200
   lr: 0.0001
-  threshold: 0.7
-  lambda_u: 0.5
-  warmup_epochs: 20
-  ema_decay: 0.999
-  grad_clip: 1.0
-  save_dir: results/fixmatch
+  save_dir: results/unetpp

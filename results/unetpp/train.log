@@ -1,0 +1,23 @@
+Training unetpp on cuda
+Epoch   1/100 | loss=0.4820 dice=0.6415 iou=0.4939 time=1.0ms
+Epoch   5/100 | loss=0.3818 dice=0.6225 iou=0.4894 time=1.1ms
+Epoch  10/100 | loss=0.2844 dice=0.7978 iou=0.6860 time=1.0ms
+Epoch  15/100 | loss=0.2736 dice=0.7417 iou=0.6194 time=1.2ms
+Epoch  20/100 | loss=0.2456 dice=0.8145 iou=0.7028 time=1.1ms
+Epoch  25/100 | loss=0.2228 dice=0.8274 iou=0.7217 time=1.5ms
+Epoch  30/100 | loss=0.1920 dice=0.8586 iou=0.7646 time=1.0ms
+Epoch  35/100 | loss=0.1736 dice=0.8493 iou=0.7542 time=1.0ms
+Epoch  40/100 | loss=0.1700 dice=0.8627 iou=0.7688 time=1.0ms
+Epoch  45/100 | loss=0.1807 dice=0.8730 iou=0.7885 time=1.0ms
+Epoch  50/100 | loss=0.1595 dice=0.8755 iou=0.7906 time=1.0ms
+Epoch  55/100 | loss=0.1563 dice=0.8735 iou=0.7905 time=1.0ms
+Epoch  60/100 | loss=0.1471 dice=0.8868 iou=0.8059 time=1.0ms
+Epoch  65/100 | loss=0.1684 dice=0.7973 iou=0.6963 time=1.0ms
+Epoch  70/100 | loss=0.1380 dice=0.8860 iou=0.8054 time=1.0ms
+Epoch  75/100 | loss=0.1666 dice=0.8613 iou=0.7700 time=1.4ms
+Epoch  80/100 | loss=0.1365 dice=0.8962 iou=0.8206 time=1.3ms
+Epoch  85/100 | loss=0.1219 dice=0.9041 iou=0.8329 time=1.4ms
+Epoch  90/100 | loss=0.1272 dice=0.8838 iou=0.8040 time=1.5ms
+Epoch  95/100 | loss=0.1098 dice=0.9004 iou=0.8280 time=1.0ms
+Epoch 100/100 | loss=0.1440 dice=0.8912 iou=0.8136 time=1.1ms
+Best Dice: 0.9041. Checkpoint: results/unetpp/best.pth

@@ -1,0 +1,23 @@
+Training sam on cuda
+Epoch   1/100 | loss=0.4800 dice=0.7018 iou=0.5666 time=320.8ms
+Epoch   5/100 | loss=0.3068 dice=0.7840 iou=0.6635 time=321.0ms
+Epoch  10/100 | loss=0.2966 dice=0.8082 iou=0.6931 time=319.9ms
+Epoch  15/100 | loss=0.2543 dice=0.8027 iou=0.6823 time=320.2ms
+Epoch  20/100 | loss=0.2430 dice=0.8192 iou=0.7069 time=320.2ms
+Epoch  25/100 | loss=0.2293 dice=0.7911 iou=0.6725 time=320.7ms
+Epoch  30/100 | loss=0.2197 dice=0.7916 iou=0.6724 time=320.5ms
+Epoch  35/100 | loss=0.2146 dice=0.7814 iou=0.6585 time=320.4ms
+Epoch  40/100 | loss=0.2143 dice=0.7895 iou=0.6688 time=320.3ms
+Epoch  45/100 | loss=0.2020 dice=0.8035 iou=0.6909 time=321.8ms
+Epoch  50/100 | loss=0.1988 dice=0.8053 iou=0.6916 time=320.4ms
+Epoch  55/100 | loss=0.1873 dice=0.7814 iou=0.6587 time=321.3ms
+Epoch  60/100 | loss=0.1919 dice=0.7981 iou=0.6822 time=320.5ms
+Epoch  65/100 | loss=0.1840 dice=0.8003 iou=0.6838 time=320.6ms
+Epoch  70/100 | loss=0.1741 dice=0.7941 iou=0.6779 time=320.6ms
+Epoch  75/100 | loss=0.1825 dice=0.8117 iou=0.7009 time=320.3ms
+Epoch  80/100 | loss=0.1696 dice=0.8098 iou=0.6985 time=321.1ms
+Epoch  85/100 | loss=0.1711 dice=0.8056 iou=0.6902 time=320.7ms
+Epoch  90/100 | loss=0.1656 dice=0.8056 iou=0.6936 time=319.3ms
+Epoch  95/100 | loss=0.1611 dice=0.8167 iou=0.7078 time=319.6ms
+Epoch 100/100 | loss=0.1606 dice=0.8148 iou=0.7035 time=319.6ms
+Best Dice: 0.8192. Checkpoint: results/sam/best.pth

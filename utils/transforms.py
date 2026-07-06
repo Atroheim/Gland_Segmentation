@@ -47,7 +47,6 @@ class StrongAugment:
             if mask is not None:
                 mask = TF.vflip(mask)
 
-        # Color jitter on image only
         img = TF.adjust_brightness(img, 0.6 + random.random() * 0.8)
         img = TF.adjust_contrast(img, 0.6 + random.random() * 0.8)
         img = TF.adjust_saturation(img, 0.6 + random.random() * 0.8)

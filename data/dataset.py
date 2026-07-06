@@ -4,7 +4,7 @@ import numpy as np
 from torch.utils.data import Dataset
 from PIL import Image
 from torchvision import transforms as T
-from utils.transforms import WeakAugment
+from utils.transforms import WeakAugment, StrongAugment
 
 
 class GlaSDataset(Dataset):
@@ -62,6 +62,8 @@ class UnlabeledGlaSDataset(Dataset):
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225],
         )
+        self.weak_aug = WeakAugment()
+        self.strong_aug = StrongAugment()
 
     def __len__(self):
         return len(self.images)
@@ -69,4 +71,8 @@ class UnlabeledGlaSDataset(Dataset):
     def __getitem__(self, idx):
         img = Image.open(os.path.join(self.img_dir, self.images[idx])).convert('RGB')
         img = img.resize((self.img_size, self.img_size), Image.BILINEAR)
-        return self.normalize(self.to_tensor(img))
+        img_t = self.normalize(self.to_tensor(img))
+
+        weak_img = self.weak_aug(img_t, None)[0]
+        strong_img = self.strong_aug(img_t, None)[0]
+        return weak_img, strong_img

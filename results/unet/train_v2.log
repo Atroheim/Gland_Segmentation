@@ -1,0 +1,53 @@
+Training unet on cuda
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 210, in <module>
+    main()
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 206, in main
+    train_supervised(args, cfg, device)
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 106, in train_supervised
+    loss = trainer.train_epoch(train_loader)
+  File "/root/autodl-tmp/Gland_Segmentation/trainers/supervised.py", line 24, in train_epoch
+    loss.backward()
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/autograd/__init__.py", line 379, in backward
+    _engine_run_backward(
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/autograd/graph.py", line 882, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 512.00 MiB. GPU 0 has a total capacity of 31.48 GiB of which 312.38 MiB is free. Including non-PyTorch memory, this process has 11.98 GiB memory in use. Process 79454 has 19.18 GiB memory in use. Of the allocated memory 11.09 GiB is allocated by PyTorch, and 608.81 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+Training unet on cuda
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 224, in <module>
+    main()
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 220, in main
+    train_supervised(args, cfg, device)
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 98, in train_supervised
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 1396, in __init__
+    super().__init__(optimizer, last_epoch)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 139, in __init__
+    raise KeyError(
+KeyError: "param 'initial_lr' is not specified in param_groups[0] when resuming scheduler with last_epoch >= 0.\nThis typically happens when:\n1. You're trying to resume training from a checkpoint but haven't properly loaded the optimizer state\n2. You're using last_epoch >= 0 for a fresh training run (not recommended)"
+Training unet on cuda
+Resumed from results/unet/best.pth, starting at epoch 101
+Epoch 105/200 | loss=0.1181 dice=0.8951 iou=0.8184 time=1.3ms
+Epoch 110/200 | loss=0.1115 dice=0.8953 iou=0.8201 time=0.7ms
+Epoch 115/200 | loss=0.1146 dice=0.8932 iou=0.8174 time=0.7ms
+Epoch 120/200 | loss=0.1142 dice=0.9003 iou=0.8283 time=0.7ms
+Epoch 125/200 | loss=0.0984 dice=0.9080 iou=0.8385 time=0.6ms
+Epoch 130/200 | loss=0.0971 dice=0.8963 iou=0.8219 time=0.7ms
+Epoch 135/200 | loss=0.1018 dice=0.9072 iou=0.8374 time=0.7ms
+Epoch 140/200 | loss=0.0844 dice=0.9100 iou=0.8423 time=0.6ms
+Epoch 145/200 | loss=0.0881 dice=0.9086 iou=0.8401 time=0.7ms
+Epoch 150/200 | loss=0.0889 dice=0.9000 iou=0.8265 time=0.6ms
+Epoch 155/200 | loss=0.0812 dice=0.9074 iou=0.8388 time=0.7ms
+Epoch 160/200 | loss=0.0784 dice=0.9102 iou=0.8424 time=0.6ms
+Epoch 165/200 | loss=0.0740 dice=0.8956 iou=0.8196 time=1.1ms
+Epoch 170/200 | loss=0.0723 dice=0.9060 iou=0.8358 time=0.7ms
+Epoch 175/200 | loss=0.0711 dice=0.9088 iou=0.8401 time=0.7ms
+Epoch 180/200 | loss=0.0713 dice=0.9080 iou=0.8389 time=0.6ms
+Epoch 185/200 | loss=0.0676 dice=0.9099 iou=0.8420 time=0.7ms
+Epoch 190/200 | loss=0.0695 dice=0.9077 iou=0.8382 time=1.0ms
+Epoch 195/200 | loss=0.0713 dice=0.9083 iou=0.8392 time=0.6ms
+Epoch 200/200 | loss=0.0705 dice=0.9083 iou=0.8393 time=0.6ms
+Best Dice: 0.9102. Checkpoint: results/unet/best.pth

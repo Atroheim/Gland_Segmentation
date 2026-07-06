@@ -1,0 +1,35 @@
+Training medsam on cuda
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 210, in <module>
+    main()
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 206, in main
+    train_supervised(args, cfg, device)
+  File "/root/autodl-tmp/Gland_Segmentation/train.py", line 106, in train_supervised
+    loss = trainer.train_epoch(train_loader)
+  File "/root/autodl-tmp/Gland_Segmentation/trainers/supervised.py", line 22, in train_epoch
+    preds = self.model(imgs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/Gland_Segmentation/models/medsam_seg.py", line 44, in forward
+    image_embeddings = self.sam.image_encoder(imgs)  # [B, C, h, w]
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/segment_anything/modeling/image_encoder.py", line 112, in forward
+    x = blk(x)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/segment_anything/modeling/image_encoder.py", line 174, in forward
+    x = self.attn(x)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/segment_anything/modeling/image_encoder.py", line 229, in forward
+    q, k, v = qkv.reshape(3, B * self.num_heads, H * W, -1).unbind(0)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 44.00 MiB. GPU 0 has a total capacity of 31.48 GiB of which 25.06 MiB is free. Including non-PyTorch memory, this process has 1.06 GiB memory in use. Process 75738 has 19.16 GiB memory in use. Process 75737 has 11.21 GiB memory in use. Of the allocated memory 729.68 MiB is allocated by PyTorch, and 56.32 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
